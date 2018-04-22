@@ -36,6 +36,8 @@ The equations used to implement this continuous re-evaluation use the vehicle's 
 
 ![alt text](https://github.com/arpitsri3/carND_P10/blob/master/Equations.png)
 
+An additional point I'd like to mention is that the equations for orientation and orientation error had to be modified with a negative sign. Because as discussed in the classroom, in the simulator , a positive value implies a right turn and a negative value implies a left turn.
+
 I have mostly followed the instructions given in the project Q&A video linked in the project module, whenever I got stuck about how to implememt a particular equation and most of the code is adapted and taken from the MPC - 'Mind the Line' quiz and the project Q&A session.
 
 #### 2. Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.
@@ -45,7 +47,7 @@ The value chosen for N and dt ultimately used are 10 and 0.1. These were the val
 1. N-25, dt-0.05 - I picked this value from 'Mind the Line' quiz in the classroom but it made the processing slow (as is expected) (also I don't have very good hardware), so ultimately I have not used it.
 2. N-20, dt-0.1 
 
-I think , and also as explained in the Q&A , these values just work because the timestep is not so large that it slows down the MPC neither is it so small that it doesn't give a good prediction. I guess it is just a very optimal combination for the problem. Technically speaking the MPC considers a 1 second duration for a new trajectory.
+I think , and also as explained in the Q&A , 10 and 0.1 just work because the timestep is not so large that it slows down the MPC neither is it so small that it doesn't give a good prediction. I guess it is just a very optimal combination for the problem. Technically speaking the MPC considers a 1 second duration for correcting trajectory.
 
 #### 3. A polynomial is fitted to waypoints. If the student preprocesses waypoints, the vehicle state, and/or actuators prior to the MPC procedure it is described.
 
